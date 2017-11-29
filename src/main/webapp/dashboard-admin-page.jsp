@@ -16,7 +16,7 @@
 
     if(!loggedInUser.getStatus().equals("ADMIN")){
         response.sendRedirect("dashboard-user-page.jsp");
-
+    }
 
 
     MemberService memberService = new MemberService();
@@ -26,7 +26,7 @@
     ClaimService claimService = new ClaimService();
     List<Claim> claims = claimService.getAllClaims();
     pageContext.setAttribute("claims", claims);
-    }
+    
 %>
 
 <!DOCTYPE html>
