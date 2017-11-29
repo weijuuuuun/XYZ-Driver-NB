@@ -33,7 +33,7 @@
     pageContext.setAttribute("claims", claims);
     pageContext.setAttribute("loggedInUser", loggedInUser);
     pageContext.setAttribute("member", member);
-
+    pageContext.setAttribute("balance", member.getBalance());
 
 %>
 
@@ -63,7 +63,9 @@
                                 <form action="${pageContext.request.contextPath}/member-pay" method="POST">
                                     <input type="hidden" name="memberId" value="${member.id}">
                                     <input type="hidden" name="amount" value="${member.balance}">
-                                    <input type="submit" value="PAY" />
+                                    <c:if test="${balance gt 0}">
+                                        <input type="submit" value="PAY" />
+                                    </c:if>
                                 </form>
                             </td>
                         </tr>
@@ -79,7 +81,7 @@
                             <tr>
                                 <th>ID</th>
                                 <th>Payment Type</th>
-                                <th>Amount (�)</th>
+                                <th>Amount</th>
                                 <th>Date</th>
                                 <th>Time</th>
                             </tr>
@@ -102,7 +104,7 @@
                     <tr>
                         <th>ID</th>
                         <th>Rationale</th>
-                        <th>Amount (�)</th>
+                        <th>Amount</th>
                         <th>Status</th>
                         <th>Date</th>
                     </tr>
