@@ -59,7 +59,7 @@
                         <th>Name</th>
                         <th>D.O.B</th>
                         <th>Status</th>
-                        <th>Balance (�)</th>
+                        <th>Balance</th>
                         <th>Action</th>
                     </tr>
 
@@ -125,7 +125,7 @@
                     <tr>
                         <th>ID</th>
                         <th>Name</th>
-                        <th>Amount (�)</th>
+                        <th>Amount</th>
                     </tr>
                     <c:forEach items="${members}" var="member">
                         <c:if test = "${member.balance > 0}">
@@ -148,7 +148,7 @@
                                 <th>ID</th>
                                 <th>Name</th>
                                 <th>Rationale</th>
-                                <th>Amount (�)</th>
+                                <th>Amount</th>
                                 <th></th>
                                 <th></th>
                             </tr>

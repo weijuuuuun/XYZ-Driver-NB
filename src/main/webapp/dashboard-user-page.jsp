@@ -81,7 +81,7 @@
                             <tr>
                                 <th>ID</th>
                                 <th>Payment Type</th>
-                                <th>Amount (�)</th>
+                                <th>Amount</th>
                                 <th>Date</th>
                                 <th>Time</th>
                             </tr>
@@ -104,7 +104,7 @@
                     <tr>
                         <th>ID</th>
                         <th>Rationale</th>
-                        <th>Amount (�)</th>
+                        <th>Amount</th>
                         <th>Status</th>
                         <th>Date</th>
                     </tr>
