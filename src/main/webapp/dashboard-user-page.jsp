@@ -156,9 +156,8 @@
     $(document).ready(function () {
 
         var userId = $("#userId").text();
-        console.log("http://localhost:8080/xyz-driver/claim/eligibility?member-id="+userId);
-
-        $.get( "http://localhost:8080/xyz-driver/claim/eligibility?member-id="+userId, function( data ) {
+        console.log("http://localhost:8080/XYZ-Driver-NB/claim/eligibility?member-id="+userId);
+        $.get( "http://localhost:8080/XYZ-Driver-NB/claim/eligibility?member-id="+userId, function( data ) {
 
             if(data === false){
                 $("#submitClaim").hide();
