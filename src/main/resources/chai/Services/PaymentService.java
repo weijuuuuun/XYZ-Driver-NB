@@ -11,15 +11,15 @@ public class PaymentService {
 
     private PaymentDAO paymentDAO;
 
-    public PaymentService(){
+    public PaymentService() {
         this.paymentDAO = new PaymentDAO();
     }
 
-    public List<Payment> getPaymentOfMember(String memberId){
-       return this.paymentDAO.getPaymentOfMember(memberId);
+    public List<Payment> getPaymentOfMember(String memberId) {
+        return this.paymentDAO.getPaymentOfMember(memberId);
     }
 
-    public void pay(String memberId, float amount){
+    public void pay(String memberId, float amount) {
 
         Date date = new Date();
         DateService dateService = new DateService("yyyy-MM-dd");
@@ -27,6 +27,6 @@ public class PaymentService {
 
         this.paymentDAO.pay(memberId);
         this.paymentDAO.addPaymentRecord(memberId, "FEE", amount, dateService.dateToString(date), timeService.dateToString(date));
-        
+
     }
 }

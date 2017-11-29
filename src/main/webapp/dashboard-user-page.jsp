@@ -11,12 +11,12 @@
 
     User loggedInUser = (User) session.getAttribute("loggedInUser");
 
-    if(loggedInUser == null){
+    if (loggedInUser == null) {
         response.sendRedirect("login-page.jsp");
         return;
     }
 
-    if(loggedInUser.getStatus().equals("ADMIN")){
+    if (loggedInUser.getStatus().equals("ADMIN")) {
         response.sendRedirect("dashboard-admin-page.jsp");
     }
 
@@ -52,76 +52,76 @@
         </div>
         <div id="container">
             <h3>DashBoard - <span id="userId">${member.id}</span> (${member.status}) </h3>
-                <table>
-                    <tbody>
-                        <tr></tr>
-                        <tr>
-                            <td><label>Outstanding:</label></td>
-                            <td><label>${member.balance}</label></td>
-                            <td>
-
-                                <form action="${pageContext.request.contextPath}/member-pay" method="POST">
-                                    <input type="hidden" name="memberId" value="${member.id}">
-                                    <input type="hidden" name="amount" value="${member.balance}">
-                                    <c:if test="${balance gt 0}">
-                                        <input type="submit" value="PAY" />
-                                    </c:if>
-                                </form>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-                
-                <div style="clear: both;"></div>
-                <div style="clear: both;"></div>
-                
-                <h3>All Payments</h3>
-                    <table>
-
-                            <tr>
-                                <th>ID</th>
-                                <th>Payment Type</th>
-                                <th>Amount</th>
-                                <th>Date</th>
-                                <th>Time</th>
-                            </tr>
-                            <c:forEach items="${payments}" var="payment">
-                                <tr>
-                                    <th>${payment.id}</th>
-                                    <th>${payment.typeOfPayment}</th>
-                                    <th>${payment.amount}</th>
-                                    <th>${payment.dateString}</th>
-                                    <th>${payment.timeString}</th>
-                                </tr>
-                            </c:forEach>
-                    </table>
-                
-                <div style="clear: both;"></div>
-
-
-                <h3>All Claims</h3>
-                <table>
+            <table>
+                <tbody>
+                    <tr></tr>
                     <tr>
-                        <th>ID</th>
-                        <th>Rationale</th>
-                        <th>Amount</th>
-                        <th>Status</th>
-                        <th>Date</th>
+                        <td><label>Outstanding:</label></td>
+                        <td><label>${member.balance}</label></td>
+                        <td>
+
+                            <form action="${pageContext.request.contextPath}/member-pay" method="POST">
+                                <input type="hidden" name="memberId" value="${member.id}">
+                                <input type="hidden" name="amount" value="${member.balance}">
+                                <c:if test="${balance gt 0}">
+                                    <input type="submit" value="PAY" />
+                                </c:if>
+                            </form>
+                        </td>
                     </tr>
+                </tbody>
+            </table>
+
+            <div style="clear: both;"></div>
+            <div style="clear: both;"></div>
+
+            <h3>All Payments</h3>
+            <table>
+
+                <tr>
+                    <th>ID</th>
+                    <th>Payment Type</th>
+                    <th>Amount</th>
+                    <th>Date</th>
+                    <th>Time</th>
+                </tr>
+                <c:forEach items="${payments}" var="payment">
+                    <tr>
+                        <th>${payment.id}</th>
+                        <th>${payment.typeOfPayment}</th>
+                        <th>${payment.amount}</th>
+                        <th>${payment.dateString}</th>
+                        <th>${payment.timeString}</th>
+                    </tr>
+                </c:forEach>
+            </table>
+
+            <div style="clear: both;"></div>
 
 
-                    <c:forEach items="${claims}" var="claim">
-                        <c:if test="${claim.member.id eq loggedInUser.id}">
-                            <tr>
-                                <th>${claim.id}</th>
-                                <th>${claim.rationale}</th>
-                                <th>${claim.amount}</th>
-                                <th>${claim.status}</th>
-                                <th>${claim.dateString}</th>
-                            </tr>
-                        </c:if>
-                    </c:forEach>
-                </table>
+            <h3>All Claims</h3>
+            <table>
+                <tr>
+                    <th>ID</th>
+                    <th>Rationale</th>
+                    <th>Amount</th>
+                    <th>Status</th>
+                    <th>Date</th>
+                </tr>
+
+
+                <c:forEach items="${claims}" var="claim">
+                    <c:if test="${claim.member.id eq loggedInUser.id}">
+                        <tr>
+                            <th>${claim.id}</th>
+                            <th>${claim.rationale}</th>
+                            <th>${claim.amount}</th>
+                            <th>${claim.status}</th>
+                            <th>${claim.dateString}</th>
+                        </tr>
+                    </c:if>
+                </c:forEach>
+            </table>
 
 
             <h3>Submit Claim</h3>
@@ -129,18 +129,18 @@
             <form action="${pageContext.request.contextPath}/submit-claim" method="POST" id="submitClaim">
                 <table>
                     <tbody>
-                    <tr>
-                        <td><label>Rationale </label></td>
-                        <td><input type="text" name="rationale"/></td>
-                    </tr>
-                    <tr>
-                        <td><label>Amount </label></td>
-                        <td><input type="text" name="amount"/></td>
-                    </tr>
-                    <tr>
-                        <td><label></label></td>
-                        <td><input type="submit" value="Submit" class="btn"/></td>
-                    </tr>
+                        <tr>
+                            <td><label>Rationale </label></td>
+                            <td><input type="text" name="rationale"/></td>
+                        </tr>
+                        <tr>
+                            <td><label>Amount </label></td>
+                            <td><input type="text" name="amount"/></td>
+                        </tr>
+                        <tr>
+                            <td><label></label></td>
+                            <td><input type="submit" value="Submit" class="btn"/></td>
+                        </tr>
                     </tbody>
                 </table>
             </form>
@@ -149,23 +149,20 @@
     </body>
 </html>
 
-<script src="https://code.jquery.com/jquery-3.2.1.min.js"> </script>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 
 <script>
 
     $(document).ready(function () {
 
         var userId = $("#userId").text();
-        console.log("http://localhost:8080/XYZ-Driver-NB/claim/eligibility?member-id="+userId);
-        $.get( "http://localhost:8080/XYZ-Driver-NB/claim/eligibility?member-id="+userId, function( data ) {
+        console.log("http://localhost:8080/XYZ-Driver-NB/claim/eligibility?member-id=" + userId);
+        $.get("http://localhost:8080/XYZ-Driver-NB/claim/eligibility?member-id=" + userId, function (data) {
 
-            if(data === false){
+            if (data === false) {
                 $("#submitClaim").hide();
                 $("#uneligible").show();
             }
-
         });
-
     });
-
 </script>
