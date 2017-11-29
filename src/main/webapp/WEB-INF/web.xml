@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5"
+         xmlns="http://java.sun.com/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+
+  <display-name>Archetype Created Web Application</display-name>
+
+  <servlet>
+        <servlet-name>MemberAuthenticationController</servlet-name>
+        <servlet-class>
+            chai.controllers.MemberAuthenticationController
+        </servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>MemberAuthenticationController</servlet-name>
+        <url-pattern>/authenticate-member</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AdminAuthenticationController</servlet-name>
+        <servlet-class>
+            chai.controllers.AdminAuthenticationController
+        </servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AdminAuthenticationController</servlet-name>
+        <url-pattern>/authenticate-admin</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>MemberSignUpController</servlet-name>
+        <servlet-class>
+            chai.controllers.MemberSignUpController
+        </servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>MemberSignUpController</servlet-name>
+        <url-pattern>/sign-up-member</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>LogoutController</servlet-name>
+        <servlet-class>
+            chai.controllers.LogoutController
+        </servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LogoutController</servlet-name>
+        <url-pattern>/logout</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>HandleClaimController</servlet-name>
+        <servlet-class>
+            chai.controllers.HandleClaimController
+        </servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>HandleClaimController</servlet-name>
+        <url-pattern>/handle-claim</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>HandleMemberController</servlet-name>
+        <servlet-class>
+            chai.controllers.HandleMemberController
+        </servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>HandleMemberController</servlet-name>
+        <url-pattern>/handle-member</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>MemberPaymentController</servlet-name>
+        <servlet-class>
+            chai.controllers.MemberPaymentController
+        </servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>MemberPaymentController</servlet-name>
+        <url-pattern>/member-pay</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>CheckClaimEligibility</servlet-name>
+        <servlet-class>
+            chai.controllers.CheckClaimEligibilityController
+        </servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CheckClaimEligibility</servlet-name>
+        <url-pattern>/claim/eligibility</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>SubmitClaimController</servlet-name>
+        <servlet-class>
+            chai.controllers.SubmitClaimController
+        </servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SubmitClaimController</servlet-name>
+        <url-pattern>/submit-claim</url-pattern>
+    </servlet-mapping>
+
+    <session-config>
+        <session-timeout>20</session-timeout><!-- 20 minutes session -->
+    </session-config>
+</web-app>
