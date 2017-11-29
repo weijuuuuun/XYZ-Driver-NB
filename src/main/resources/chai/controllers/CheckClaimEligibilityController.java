@@ -21,7 +21,6 @@ public class CheckClaimEligibilityController extends HttpServlet {
     
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-        System.out.println("HERHERHEHREHRHERHEHREHRHERHEHRHERHEHRHEHRHEHRE");
         MemberService memberService = new MemberService();
 
         String memberId = request.getParameter("member-id");
@@ -30,6 +29,5 @@ public class CheckClaimEligibilityController extends HttpServlet {
         PrintWriter writer = response.getWriter();
 
         writer.println(memberService.getClaimEligibility(memberId));
-        System.out.println("DO AIUDHOIASHDOIASUHDOAISUHDOASIUDHASOIUDHASOIDUHASOUIDAHSOIUDAHSD"+memberService.getClaimEligibility(memberId));
     }
 }
