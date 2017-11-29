@@ -26,6 +26,6 @@ public class PaymentService {
         DateService timeService = new DateService("hh:mm:ss");
 
         this.paymentDAO.pay(memberId);
-        this.paymentDAO.addPaymentRecord(memberId, "TFF", amount, dateService.dateToString(date), timeService.dateToString(date));
+        this.paymentDAO.addPaymentRecord(memberId, "FEE", amount, dateService.dateToString(date), timeService.dateToString(date));
     }
 }
